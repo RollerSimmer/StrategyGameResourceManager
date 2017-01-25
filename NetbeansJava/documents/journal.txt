@@ -1,0 +1,86 @@
+Journal for StrategyResourceManager
+( - haven't done it, * working on it, + did it, # comment)
+
+-- 2015-09-15,19:31 --
++ started resource manager project
++ the windows are laid out using JavaFX
++ established basics for drawing graph
+
+-- 2015-09-21,17:38 --
++ learned how to load a text file in java
++ successfully parsed the resource file, now need to convert it to a graph/tree
+
+-- 2015-09-22,00:03 --
++ resource tree structure established
++ resource file successfully converted to tree
++ listed the whole graph in text form through system output
+
+-- 2015-09-22,20:30 --
++ resource tree structure established
++ deletion of existing nodes tested and it works
++ deletion affects dependencies correctly
++ added usable flags to lookup table
++ usable flags are reset upon deletion and file load
+# usable flags are for speeding up isUsable() method
++ integrated graph code with GUI
++ list of nodes displays properly in its designated text frame
++ made methods to graph that easily interface node list, name list, 
+  and lookup table in general
++ node deletion integrated with the GUI
+
+-- 2015-09-23,04:04 --
++ colors for active graph display decided: active nodes are red with blue trim,
+  usable links are dark cyan with dark blue trim
++ graph now drawn by stepping through graph's node list
++ boxes for resource tree nodes now drawn
++ links between nodes drawn as transparent triangles
+# link triangles denote link direction, with small end at dependency
++ color for inactive nodes is gray, as are links for unusable node chains
+
+-- 2015-09-24,17:43 --
++ changed direction of node link triangles; the point now touches the node and 
+  the base is at the dependency
++ changed the color of nodes 
+  (green=usable, yellow=unusable but active, red=inactive)
+
+-- 2015-09-24,19:06 --
++ list of dependencies for each node shown in node list
++ put a label next to node name input text box telling user what it is
++ canvas changed from 1000x1000 to 1500x1500 to handle larger graphs
++ added way to restore inactive nodes
++ can now add a dependency by specifying node and dependency names - 
+  missing nodes are added automatically, just as they are in loading a file
+
+-- 2015-09-25,14:29 --
++ got quit button to trigger program close
++ added means by which one can unlink a node with one of its dependencies
++ drew a legend for the graph display explaining color coding of nodes  
+  (green=usable, yellow=unusable but active, red=inactive)
++ max graph columns value is now adjusted to fit within canvas
++ removed window size display (bottom right) and replace it with something else
+
+-- 2015-09-25,14:48 --
++ added button to swap names in node and dependency text boxes
+
+-- 2015-09-26,22:16 --
++ can save a file from the graph data
++ in lookup table, list of flags added to tell if each node has been used in 
+  links or active and method to update list added
++ when saving, unused island nodes are skipped 
++ added button to clear graph
++ tested save/load and it works, but some inactive nodes get made active 
+  upon reload
+
+-- 2015-09-27,00:48 --
++ added javadocs for methods
+
+-- 2015-09-27,01:36 --
++ added file chooser dialog to chose a file name.
+
+-- 2015-10-20,17:51 --
++ nodes that are not needed by other nodes can be deleted fully now, not just 
+  made "inactive";  all referenced indexes in graph are adjusted after delete
+
+-- left to do -- 
+- (optional) add javadocs for data
+- (optional) add some more features for extra credit
